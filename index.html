@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pomodoro Progress</title>
+</head>
+<body>
+    <div class="input-container">
+        <label for="inputTime">Input time (minutes):</label>
+        <input type="number" name="inputTime" placeholder="Insert minutes" class="inputTime" value="25">
+        <button class="btn" onclick=setTimer()>Use</button>
+    </div>
+
+    <div class="container">
+        <h1>Timer</h1>
+        <p class="timer">00 : 00</p>
+        <div class="container-button">
+            <button class="btn" onclick=startTimer()>Start</button class="btn">
+            <button class="btn" onclick=stopTimer()>Stop</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
