@@ -14,13 +14,21 @@
 
     <div class="container">
         <h1>Timer</h1>
-        <p class="timer">00 : 00</p>
+        <div class="timer">
+            <button class="btn-timer">-</button>
+            <p>00 : 00</p>
+            <button class="btn-timer">+</button>
+        </div>
         <div class="container-button">
             <button class="btn" onclick=startTimer()>Start</button class="btn">
             <button class="btn" onclick=stopTimer()>Stop</button>
             <button class="btn" onclick=resetTimer()>Reset</button>
         </div>
     </div>
+    <div class="progress-bar">
+        <p class="percent">70%</p>
+        <div class="progress"></div>
+    </divcla>
 
     <script src="index.js"></script>
 </body>

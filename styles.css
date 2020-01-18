@@ -8,15 +8,40 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10%;
 }
 
 .container h1{
     font-size: 3rem;
 }
-.container p{
+.timer{
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
 }
+
+/* .timer::before, .timer::after{
+    align-items: center;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    background-color: cornsilk;
+    border-radius: 50%;
+    box-shadow: inset silver 2px 2px 2px, black 2px 2px 2px;
+    padding: 10px;
+}
+
+.timer::before{
+    content: "-1min";
+    margin-right: 10px;
+}
+.timer::after{
+    content: "+1min";
+    margin-left: 10px;
+} */
 
 .container-button{
     display: flex;
@@ -24,7 +49,7 @@ body{
     padding: 20px;
 }
 
-.btn{
+.btn, .btn-timer{
     width: 80px;
     height: 30px;
     font-family: inherit;
@@ -40,13 +65,18 @@ body{
     font-weight: 700;
     font-size: 1rem;
 }
-.btn:active{
+.btn:active, .btn-timer:active{
     box-shadow: inset black 2px 2px 2px;
 }
 
+.btn-timer {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+}
 .input-container{
+    display: none;
     flex-direction: column;
-    display: inline-flex;
     padding: 10px;
     background-color: rgb(5, 5, 5, 0.2);
     border-radius: 15px;
@@ -65,4 +95,29 @@ body{
     height: 25px;
     margin: 10px auto;
 
+}
+
+.progress-bar{
+    width: 400px;
+    height: 50px;
+    background-color: grey;
+    border-radius: 25px;
+    border: black solid 5px;
+    display: flex;
+    justify-content: start;
+    margin: auto;
+}
+
+.percent{
+    position: absolute;
+    width: 30px;
+    margin: 16px 185px;
+}
+
+.progress{
+    width: 50%;
+    background-color: greenyellow;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
 }
