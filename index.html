@@ -14,10 +14,10 @@
 
     <div class="container">
         <h1>Timer</h1>
-        <div class="timer">
-            <button class="btn-timer">-</button>
-            <p>00 : 00</p>
-            <button class="btn-timer">+</button>
+        <div class="timer-container">
+            <button class="btn-timer minus" onclick=subMinute()>-</button>
+            <p class="timer">00 : 00</p>
+            <button class="btn-timer plus" onclick=addMinute()>+</button>
         </div>
         <div class="container-button">
             <button class="btn" onclick=startTimer()>Start</button class="btn">
@@ -28,7 +28,9 @@
     <div class="progress-bar">
         <p class="percent">70%</p>
         <div class="progress"></div>
-    </divcla>
+    </div>
+
+    <audio src="alarm.mp3" id="alarm"></audio>
 
     <script src="index.js"></script>
 </body>

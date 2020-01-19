@@ -1,13 +1,18 @@
 const timerElement = document.querySelector(".timer");
 const inputMinutes = document.querySelector(".inputTime");
 const progressBar = document.querySelector(".progress");
+const plusMinute = document.querySelector(".plus");
+const minusMinute = document.querySelector(".minus");
+const alarm = document.getElementById("alarm");
 
 var seconds, minutes, time;
 var timer;
-const finishTime = 1*60
+const finishTime = 4*60;
 time = (parseInt(inputMinutes.value) * 60);
 minutes = Math.round(time / 60);
 seconds = Math.round(time % 60);
+let totalTimeLeft;
+
 
 
 function setTimer(minutes, seconds) {
@@ -20,24 +25,25 @@ function startTimer() {
 }
 
 function run() {
-    let totalTimeLeft = seconds + (minutes*60);
-    let percentOfTime = ((totalTimeLeft / finishTime)*100).toFixed(0);
+    let totalTime = seconds + (minutes*60);
+    let percentOfTime = ((totalTime / finishTime)*100).toFixed(0);
+    totalTimeLeft = finishTime - totalTime;
     setTimer(minutes, seconds);
     seconds++;
 
     if (seconds === 60) {
         seconds = 0;
         minutes++;
+        alarm.play();
     };
 
-    if (finishTime === totalTimeLeft) {
+    if (finishTime === totalTime) {
         progressBar.style.setProperty("width", `100%`);
         stopTimer();
 
     };
     progressBar.style.setProperty("width", `${percentOfTime}%`);
     document.querySelector(".percent").textContent = `${percentOfTime}%`;
-
 
 }
 
@@ -53,4 +59,15 @@ function resetTimer() {
     progressBar.style.setProperty("width", `0%`)
 }
 
-
+function addMinute() {
+    if (totalTimeLeft > 60) {
+        minutes++;
+        setTimer(minutes, seconds);
+    };
+};
+function subMinute() {
+    if (minutes >= 1){
+        minutes--;
+        setTimer(minutes, seconds);
+    };
+};
